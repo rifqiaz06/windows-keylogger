@@ -1,38 +1,38 @@
 # ⌨️ Windows Keylogger (Educational Purpose Only)
 
 ⚠️ **Disclaimer**:
-Proyek ini hanya dibuat untuk **tujuan edukasi, pembelajaran, dan riset keamanan**.
-**Jangan gunakan untuk aktivitas ilegal atau berbahaya** seperti mencuri data pribadi, password, atau informasi sensitif.
-Penulis tidak bertanggung jawab atas penyalahgunaan dari kode ini.
+This project is intended **for educational and research purposes only**.
+**Do not use this software for any malicious or illegal activity** such as stealing personal data, credentials, or sensitive information.
+The author is **not responsible for any misuse** of this code.
 
 ---
 
 ## 📖 Overview
 
-Keylogger sederhana berbasis Go untuk Windows yang menggunakan package [`go-hook`](https://github.com/moutend/go-hook).
-Script ini akan menangkap event keyboard dan menyimpannya ke file `log.txt`.
+A simple Windows keylogger written in Go that uses the [`go-hook`](https://github.com/moutend/go-hook) package.
+This program captures keyboard events and stores them into a `log.txt` file.
 
-Fungsinya lebih cocok untuk:
+Use cases:
 
-- Belajar bagaimana **event hook** bekerja di Windows
-- Riset keamanan & forensik digital
-- Debugging input aplikasi
+* Learn how **event hooks** work in Windows
+* Security research & digital forensics
+* Debugging keyboard input in applications
 
 ---
 
 ## 🛠️ Installation
 
-1. Pastikan sudah install **Go 1.16+**
-   Download di: [https://go.dev/dl/](https://go.dev/dl/)
+1. Make sure you have **Go 1.16+** installed
+   Download: [https://go.dev/dl/](https://go.dev/dl/)
 
-2. Clone repository:
+2. Clone the repository:
 
    ```bash
    git clone https://github.com/username/windows-keylogger.git
    cd windows-keylogger
    ```
 
-3. Install dependency:
+3. Install dependencies:
 
    ```bash
    go get github.com/moutend/go-hook/pkg/keyboard
@@ -43,31 +43,31 @@ Fungsinya lebih cocok untuk:
 
 ## 🚀 Usage
 
-Build program:
+Build the program:
 
 ```bash
 go build -o keylogger.exe
 ```
 
-Jalankan program:
+Run the program:
 
 ```bash
 keylogger.exe
 ```
 
-Output di terminal:
+Terminal output:
 
 ```
 start capturing keyboard input
 ```
 
-Semua input keyboard akan disimpan ke file `log.txt` di direktori yang sama.
+All keystrokes will be saved into a `log.txt` file in the same directory.
 
 ---
 
 ## 📝 Example Output
 
-Isi `log.txt`:
+`log.txt` contents:
 
 ```
 A B C D 1 2 3 ENTER SPACE
@@ -77,6 +77,6 @@ A B C D 1 2 3 ENTER SPACE
 
 ## ⚠️ Limitations
 
-- Hanya berjalan di **Windows** (karena menggunakan Windows API hook).
-- Hanya menangkap event keyboard (tidak termasuk clipboard atau mouse).
-- Log tidak terenkripsi → siapa pun yang buka `log.txt` bisa lihat hasilnya.
+* Works only on **Windows** (due to Windows API hooks).
+* Captures **keyboard events only** (no mouse or clipboard).
+* Logs are saved in plain text → anyone with access can read them.
